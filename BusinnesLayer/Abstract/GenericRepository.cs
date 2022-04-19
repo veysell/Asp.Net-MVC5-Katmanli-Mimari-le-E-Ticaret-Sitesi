@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,30 +10,34 @@ namespace BusinnesLayer.Abstract
 {
     public class GenericRepository<T> : IRepository<T> where T : class, new()
     {
-        DataContext 
+        DataContext db = new DataContext();
+        DbSet<T> data;
         public void Delete(T p)
         {
-            throw new NotImplementedException();
+            data.Remove(p);
+            db.SaveChanges();
         }
 
         public T GetById(int id)
         {
-            throw new NotImplementedException();
+            return data.Find(id);
         }
 
         public void Insert(T p)
         {
-            throw new NotImplementedException();
+            data.Add(p);
+            db.SaveChanges();
         }
 
         public List<T> List()
         {
-            throw new NotImplementedException();
+            return data.ToList();
         }
 
         public void Update(T p)
         {
-            throw new NotImplementedException();
+            db.Entry<T>(p).State = EntityState.Modified;
+            db.SaveChanges();
         }
     }
 }
