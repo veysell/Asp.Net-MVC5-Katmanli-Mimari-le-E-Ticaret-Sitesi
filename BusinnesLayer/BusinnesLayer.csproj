@@ -50,19 +50,23 @@
   <ItemGroup>
     <Compile Include="Abstract\GenericRepository.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Concrete\CategoryRepository.cs" />
+    <Compile Include="Concrete\ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Concrete\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
       <Project>{05E6E5EC-D002-43AE-B78A-230CC81F90CF}</Project>
       <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
+      <Project>{059736f9-1ae9-4a84-a0ee-3408d0fd0a8f}</Project>
+      <Name>EntityLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
