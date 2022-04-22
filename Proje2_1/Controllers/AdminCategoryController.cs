@@ -21,11 +21,17 @@ namespace Proje2_1.Controllers
         {
             return View();
         }
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Create(Category p)
         {
-            categoryRepository.Insert(p);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                categoryRepository.Insert(p);
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Bir hata oluştu");
+            return View();
         }
     }
 }
