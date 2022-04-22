@@ -12,6 +12,11 @@ namespace BusinnesLayer.Abstract
     {
         DataContext db = new DataContext();
         DbSet<T> data;
+
+        public GenericRepository()
+        {
+            data = db.Set<T>();
+        }
         public void Delete(T p)
         {
             data.Remove(p);
