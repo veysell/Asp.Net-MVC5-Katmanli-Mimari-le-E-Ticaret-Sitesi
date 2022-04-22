@@ -1,4 +1,5 @@
 ﻿using BusinnesLayer.Concrete;
+using EntityLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,16 @@ namespace Proje2_1.Controllers
         {
 
             return View(categoryRepository.List());
+        }
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Category p)
+        {
+            categoryRepository.Insert(p);
+            return RedirectToAction("Index");
         }
     }
 }
