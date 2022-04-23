@@ -1,6 +1,6 @@
 ﻿@model EntityLayer.Entities.Category
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Update";
 }
 
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
@@ -14,18 +14,19 @@
 
                 <div class="form-group">
                     <label>Ad</label>
-                    <input type="text" class="form-control" name="Name" />
-                    @Html.ValidationMessageFor(x=>x.Name, "",new {@style="color:red" }) 
+                    <input type="text" class="form-control" name="Name" value="@Model.Name" />
+                    @Html.ValidationMessageFor(x => x.Name, "", new { @style = "color:red" })
                 </div>
                 <br />
                 <div class="form-group">
                     <label>Açıklama</label>
-                    <input type="text" class="form-control" name="Desciription" />
+                    <input type="text" class="form-control" name="Desciription" value="@Model.Desciription" />
                     @Html.ValidationMessageFor(x => x.Desciription, "", new { @style = "color:red" })
                 </div>
                 <br />
-                <button class="btn btn-primary" type="submit">Ekle</button>
+                <button class="btn btn-primary" type="submit">Güncelle</button>
             </form>
         </div>
     </div>
 </div>
+

@@ -10,6 +10,7 @@ namespace EntityLayer.Entities
     public class Category
     {
         public int Id { get; set; }
+
         [Required (ErrorMessage ="Boş Geçilemez!")]
         [Display(Name="Ad")]
         [StringLength(50,ErrorMessage ="En fazla 50 karakter girilebilir.")]

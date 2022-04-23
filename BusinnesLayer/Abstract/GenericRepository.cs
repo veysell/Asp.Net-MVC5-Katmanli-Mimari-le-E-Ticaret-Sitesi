@@ -30,8 +30,8 @@ namespace BusinnesLayer.Abstract
 
         public void Insert(T p)
         {
-            _ = data.Add(p);
-            db.SaveChanges();
+            data.Add(p);
+            db.SaveChanges(); 
         }
 
         public List<T> List()
