@@ -712,6 +712,9 @@
     <Compile Include="Controllers\AdminCategoryController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminProductController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -806,6 +809,9 @@
     <Content Include="Views\AdminProduct\Create.cshtml" />
     <Content Include="Views\AdminProduct\Update.cshtml" />
     <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Category\CategoryList.cshtml" />
+    <Content Include="Views\Product\PopularProduct.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
