@@ -812,6 +812,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Category\CategoryList.cshtml" />
     <Content Include="Views\Product\PopularProduct.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

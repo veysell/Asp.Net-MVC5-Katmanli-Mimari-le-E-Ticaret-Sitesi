@@ -16,5 +16,11 @@ namespace Proje2_1.Controllers
         {
             return PartialView(categoryRepository.List());
         }
+
+        public ActionResult Details(int id)
+        {
+            var cat = categoryRepository.CategoryDetails(id);
+            return View(cat);
+        }
     }
 }
