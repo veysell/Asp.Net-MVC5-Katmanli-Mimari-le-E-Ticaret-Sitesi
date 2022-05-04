@@ -18,5 +18,11 @@ namespace Proje2_1.Controllers
             ViewBag.popular = product; 
             return PartialView();
         }
+
+        public ActionResult ProductDetails(int id)
+        {
+            var details = productRepository.GetById(id);
+            return View(details);
+        }
     }
 }
