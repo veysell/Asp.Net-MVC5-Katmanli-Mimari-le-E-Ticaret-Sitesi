@@ -92,7 +92,7 @@
 
                                         </div>
                                         <div class="modal-body">
-                                            <textarea class="form-control" name="Icerik" placeholder="Yorum Yazınız..."></textarea>
+                                            <textarea class="form-control" name="Content" placeholder="Yorum Yazınız..."></textarea>
                                             <input type="hidden" name="ProductId" value="@Model.Id" />
                                             <input type="hidden" name="UserId" value="@Session["userid"]" />
                                             <input type="hidden" name="Date" value="@DateTime.Now" />
@@ -105,27 +105,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Button trigger modal -->
-                        @*<div class="row">
-                                <div class="col-sm-8">
-                                    <h3>Yorum Yap</h3>
-
-                                    <div>
-                                   <input type="text" placeholder="Adınız Soyadınız" class="form-control col-md-4 col-sm-4" id="userName"/>
-                                        <br /> <br />
-                                        <textarea id="icerikgir" placeholder="Yorum yazınız" required></textarea>
-                                        <br />
-                                        <br />
-
-                                        <button type="submit" class="btn btn-warning" value="Yorum Yap" id="gonder">Yorum Yap</button>
-
-                                    </div>
-
-
-
-
-                                </div>
-                            </div>*@
+                        
 
 
                         <hr />
@@ -133,16 +113,14 @@
                             <div class="col-md-4 col-sm-4">
 
 
-                                @*@foreach (var item in ViewBag.yorum)
+                                @foreach (var item in ViewBag.yorum)
                                     {
-                                        <h4 style="color:coral">
-                                            @item.User.Name
-                                        </h4>
-                                        <p>@item.Icerik </p>
-                                     }*@
+                                <h4 style="color:coral">
+                                    @item.Date  <br /> <br /> @item.User.Name @item.User.SurName
+                                </h4>
+                                        <p>@item.Content </p>
+                                     }
                                 <hr />
-
-
 
 
                             </div>

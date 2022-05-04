@@ -1,4 +1,6 @@
 ﻿using BusinnesLayer.Concrete;
+using DataAccessLayer.Context;
+using EntityLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,7 @@ namespace Proje2_1.Controllers
     {
         // GET: Product
         ProductRepository productRepository = new ProductRepository();
-
+        DataContext db = new DataContext();
         public PartialViewResult PopularProduct()
         {
             var product = productRepository.GetPopularProduct();
@@ -22,7 +24,21 @@ namespace Proje2_1.Controllers
         public ActionResult ProductDetails(int id)
         {
             var details = productRepository.GetById(id);
+            var yorum = db.Comments.Where(x => x.ProductId == id).ToList();
+            ViewBag.yorum = yorum;
             return View(details);
+        }
+
+        [HttpPost]
+        public ActionResult Comment(Comment data)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                db.Comments.Add(data);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+            return View();
         }
     }
 }
