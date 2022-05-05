@@ -47,5 +47,7 @@ namespace EntityLayer.Entities
         public int CategoriId { get; set; }
 
         public virtual Category Category { get; set; }
+
+        public virtual List<Cart> Cart   { get; set; }
     }
 }
