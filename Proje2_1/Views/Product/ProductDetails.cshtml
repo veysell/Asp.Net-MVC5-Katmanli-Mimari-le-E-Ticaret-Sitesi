@@ -84,9 +84,8 @@
                                     }
 
                                 </p>
-                                <p><b>Onay:</b> @Model.IsApproved</p>
                                 <p>
-                                    <b>Açıklama:</b>
+                                    <b>Onay:</b>
                                     @if (Model.IsApproved == true)
                                     {
                                         <b>Evet</b>
@@ -95,6 +94,10 @@
                                     {
                                         <b>Hayır</b>
                                     }
+                                </p>
+                                <p>
+                                    <b>Açıklama: @Model.Desciription</b>
+
                                 </p>
                                 <a href=""><img src="images/product-details/share.png" class="share img-responsive" alt="" /></a>
                             </div><!--/product-information-->
