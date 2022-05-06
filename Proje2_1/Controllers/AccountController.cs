@@ -46,6 +46,7 @@ namespace Proje2_1.Controllers
                 db.Users.Add(data);
                 data.Role = "User";
                 db.SaveChanges();
+                ModelState.AddModelError("", "Başarılı");
                 return RedirectToAction("Login");
             }
             ModelState.AddModelError("", "Hatalı");

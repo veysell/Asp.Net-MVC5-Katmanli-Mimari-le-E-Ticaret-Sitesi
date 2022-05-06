@@ -12,6 +12,8 @@ using PagedList;
 
 namespace Proje2_1.Controllers
 {
+    //[Authorize(Roles = "Admin")]
+
     public class AdminProductController : Controller
     {
         // GET: AdminProduct

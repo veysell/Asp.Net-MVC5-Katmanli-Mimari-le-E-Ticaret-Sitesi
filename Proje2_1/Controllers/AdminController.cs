@@ -10,6 +10,7 @@ using PagedList.Mvc;
 
 namespace Proje2_1.Controllers
 {
+   // [Authorize(Roles ="Admin")]
     public class AdminController : Controller
     {
         // GET: Admin
@@ -28,6 +29,21 @@ namespace Proje2_1.Controllers
             db.Comments.Remove(delete);
             db.SaveChanges();
             return RedirectToAction("Comment");
+        }
+
+        public ActionResult UserList()
+        {
+            var user = db.Users.Where(x => x.Role == "User").ToList();
+            return View(user);
+        }
+
+        public ActionResult UserDelete(int id)
+        {
+            var userid = db.Users.Where(x => x.Id == id).FirstOrDefault();
+            db.Users.Remove(userid);
+            db.SaveChanges();
+
+            return RedirectToAction("UserList");
         }
     }
 }
