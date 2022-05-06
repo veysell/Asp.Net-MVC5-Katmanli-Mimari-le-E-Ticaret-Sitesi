@@ -833,6 +833,8 @@
     <Content Include="Views\Sales\islem.cshtml" />
     <Content Include="Views\Sales\Buy.cshtml" />
     <Content Include="Views\Sales\Buyall.cshtml" />
+    <Content Include="Views\AdminProduct\CriticalStock.cshtml" />
+    <Content Include="Views\AdminProduct\StockCount.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
