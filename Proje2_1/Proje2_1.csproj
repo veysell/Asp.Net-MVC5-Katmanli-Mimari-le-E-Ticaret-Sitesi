@@ -720,11 +720,13 @@
     <Compile Include="Controllers\AdminCategoryController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminProductController.cs" />
+    <Compile Include="Controllers\AdminSalesController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -835,6 +837,9 @@
     <Content Include="Views\Sales\Buyall.cshtml" />
     <Content Include="Views\AdminProduct\CriticalStock.cshtml" />
     <Content Include="Views\AdminProduct\StockCount.cshtml" />
+    <Content Include="Views\AdminSales\Index.cshtml" />
+    <Content Include="Views\User\Update.cshtml" />
+    <Content Include="Views\User\PasswordReset.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -43,6 +43,8 @@
                             <input type="email" placeholder="Email Adresi"  name="Email" />
                             <input type="password" placeholder="Şifre"   name="Password"/>
                             <button type="submit" class="btn btn-default">Giriş Yap</button>
+                            <br />
+                            <a href="/User/PasswordReset" class="">Şifre Sıfırlama</a>
                         </form>
                     </div><!--/login form-->
                 </div> 
@@ -58,13 +60,13 @@
                             @Html.ValidationMessageFor(x => x.Name, "", new { @style = "color:red" })
                             <input type="text" placeholder="Soyad" name="SurName" />
                             @Html.ValidationMessageFor(x => x.SurName, "", new { @style = "color:red" })
-                            <input type="email" placeholder="Email Adresi" name="Email" />
+                            <input type="email" placeholder="Email Adresi" name="Email" required maxlength="50" />
                             @Html.ValidationMessageFor(x => x.Email, "", new { @style = "color:red" })
                             <input type="text" placeholder="Kullanıcı Adı" name="UserName" />
                             @Html.ValidationMessageFor(x => x.UserName, "", new { @style = "color:red" })
-                            <input type="password" placeholder="Şifre" name="Password" />
+                            <input type="password" placeholder="Şifre" name="Password" required maxlength="50"/>
                             @Html.ValidationMessageFor(x => x.Password, "", new { @style = "color:red" })
-                            <input type="password" placeholder="Şifre Tekrar" name="RePassword" />
+                            <input type="password" placeholder="Şifre Tekrar" name="RePassword" required maxlength="50"/>
                             @Html.ValidationMessageFor(x => x.RePassword, "", new { @style = "color:red" })
                             <button type="submit" class="btn btn-default">Kaydet</button>
                         </form>
