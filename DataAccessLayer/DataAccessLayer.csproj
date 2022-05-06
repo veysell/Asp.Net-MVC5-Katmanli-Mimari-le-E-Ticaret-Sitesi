@@ -56,6 +56,10 @@
     <Compile Include="Migrations\202205061227279_userpass.designer.cs">
       <DependentUpon>202205061227279_userpass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205061334587_user2.cs" />
+    <Compile Include="Migrations\202205061334587_user2.designer.cs">
+      <DependentUpon>202205061334587_user2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,6 +76,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202205061227279_userpass.resx">
       <DependentUpon>202205061227279_userpass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205061334587_user2.resx">
+      <DependentUpon>202205061334587_user2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

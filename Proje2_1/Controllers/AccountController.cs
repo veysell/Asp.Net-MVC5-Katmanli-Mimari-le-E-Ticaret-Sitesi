@@ -21,7 +21,7 @@ namespace Proje2_1.Controllers
         [HttpPost]
         public ActionResult Login(User data)
         {
-            var bilgiler = db.Users.FirstOrDefault(x => x.Email == data.Email && x.Password == data.Password);
+            var bilgiler= db.Users.FirstOrDefault(x => x.Email == data.Email && x.Password == data.Password);
             if (bilgiler!=null)
             {
                 FormsAuthentication.SetAuthCookie(bilgiler.Email, false);
@@ -31,7 +31,10 @@ namespace Proje2_1.Controllers
                 Session["userId"] = bilgiler.Id.ToString();
                 return RedirectToActionPermanent("Index", "Home");
             }
-            ViewBag.hata = "Email yada şifre hatalı";
+            else
+            {
+                ViewBag.hata = "Email yada şifre hatalı";
+            }
             return View();
         }
 

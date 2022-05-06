@@ -46,9 +46,10 @@ namespace Proje2_1.Controllers
             if (mail!=null)
             {
                 Random rnd = new Random();
-                int yenisifre = rnd.Next();
+                int yenisifre = rnd.Next(100000,999999);
                 User sifre = new User();
                 mail.Password = (Convert.ToString(yenisifre));
+                mail.RePassword= (Convert.ToString(yenisifre));
                 db.SaveChanges();
                 WebMail.SmtpServer = "smtp.gmail.com";
                 WebMail.EnableSsl = true;
