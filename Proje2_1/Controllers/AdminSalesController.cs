@@ -9,7 +9,7 @@ using PagedList.Mvc;
 
 namespace Proje2_1.Controllers
 {
-   // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
 
     public class AdminSalesController : Controller
     {

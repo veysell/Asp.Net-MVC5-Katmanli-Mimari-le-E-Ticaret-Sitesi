@@ -17,11 +17,11 @@ namespace Proje2_1.Controllers
         public PartialViewResult PopularProduct()
         {
             var product = productRepository.GetPopularProduct();
-            ViewBag.popular = product; 
+            ViewBag.popular = product;
             return PartialView();
         }
 
-       // [Route("Product/ProductDetails/{id}/{name}")]
+        // [Route("Product/ProductDetails/{id}/{name}")]
         public ActionResult ProductDetails(int id)
         {
             var details = productRepository.GetById(id);
@@ -39,7 +39,7 @@ namespace Proje2_1.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index", "Home");
             }
-            return View();
+            return RedirectToAction("Login","Account");
         }
     }
 }

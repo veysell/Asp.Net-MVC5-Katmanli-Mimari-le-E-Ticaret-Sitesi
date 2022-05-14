@@ -69,7 +69,7 @@ namespace Proje2_1.Controllers
                     return RedirectToAction("Index", "Cart");
                 }
             }
-            return View();
+            return RedirectToAction("Login","Account");
         }
 
         public ActionResult TotalCount(int? count)
@@ -140,5 +140,6 @@ namespace Proje2_1.Controllers
             }
             return HttpNotFound();
         }
+        
     }
 }

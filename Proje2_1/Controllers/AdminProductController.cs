@@ -12,7 +12,7 @@ using PagedList;
 
 namespace Proje2_1.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
 
     public class AdminProductController : Controller
     {
@@ -88,7 +88,7 @@ namespace Proje2_1.Controllers
                     update.Name = data.Name;
                     update.IsApproved = data.IsApproved;
                     update.Popular = data.Popular;
-                    update.Price = update.Price;
+                    update.Price = data.Price;
                     update.Stock = data.Stock;
                     update.CategoriId = data.CategoriId;
                     productRepository.Update(update);
@@ -100,7 +100,7 @@ namespace Proje2_1.Controllers
                     update.Name = data.Name;
                     update.IsApproved = data.IsApproved;
                     update.Popular = data.Popular;
-                    update.Price = update.Price;
+                    update.Price = data.Price;
                     update.Stock = data.Stock;
                     update.Image = File.FileName.ToString();
                     update.CategoriId = data.CategoriId;

@@ -103,6 +103,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bootstrap\css\bootstrap-grid.css" />
+    <Content Include="bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="bootstrap\css\bootstrap.css" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="bootstrap\js\bootstrap.esm.js" />
+    <Content Include="bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="bootstrap\js\bootstrap.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -119,12 +141,16 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Content\Image\1.jpg" />
-    <Content Include="Content\Image\2.jpg" />
-    <Content Include="Content\Image\3.jpg" />
-    <Content Include="Content\Image\5.jpg" />
-    <Content Include="Content\Image\6.jpg" />
-    <Content Include="Content\Image\7.jpg" />
+    <Content Include="Content\Image\Arduino Nano Klon%28usb kablo dahil%29.jpg" />
+    <Content Include="Content\Image\Arduino Uno Süper Başlangıç Seti.jpg" />
+    <Content Include="Content\Image\ESP32 Tabanlı Arduino Uno Kablosuz Bluetooth+Wifi CH340.jpg" />
+    <Content Include="Content\Image\Orijinal Arduino Due.jpg" />
+    <Content Include="Content\Image\Orijinal Arduino Leonardo.jpg" />
+    <Content Include="Content\Image\Orijinal Arduino Micro.jpg" />
+    <Content Include="Content\Image\Orijinal Arduino Nano Every.jpg" />
+    <Content Include="Content\Image\Orijinal Arduino Nano.jpg" />
+    <Content Include="Content\Image\Orijinal Arduino Uno R3.jpg" />
+    <Content Include="Content\Image\Orijinal Arduino Uno SMD.jpg" />
     <Content Include="Content\Image\sepet.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\Site.css" />
@@ -168,6 +194,8 @@
     <Content Include="eshop\images\home\iframe3.png" />
     <Content Include="eshop\images\home\iframe4.png" />
     <Content Include="eshop\images\home\logo.png" />
+    <Content Include="eshop\images\home\logo1.png" />
+    <Content Include="eshop\images\home\logo12.jpeg" />
     <Content Include="eshop\images\home\map.png" />
     <Content Include="eshop\images\home\new.png" />
     <Content Include="eshop\images\home\partner1.png" />
@@ -706,36 +734,6 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="eshop\fonts\fontawesome-webfont.woff" />
-    <Content Include="eshop\fonts\FontAwesome.otf" />
-    <Content Include="eshop\fonts\glyphicons-halflings-regular.woff" />
-    <None Include="Scripts\jquery-1.8.3.intellisense.js" />
-    <Content Include="Scripts\jquery-1.8.3.js" />
-    <Content Include="Scripts\jquery-1.8.3.min.js" />
-    <Content Include="Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdminCategoryController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\AdminIstatisticController.cs" />
-    <Compile Include="Controllers\AdminProductController.cs" />
-    <Compile Include="Controllers\AdminSalesController.cs" />
-    <Compile Include="Controllers\CartController.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\SalesController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Roller\AdminRolProvider.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\web.config" />
     <Content Include="NiceAdmin\assets\chart-master\component.json" />
     <Content Include="NiceAdmin\assets\chart-master\docs\prettify.less" />
     <Content Include="NiceAdmin\assets\chart-master\docs\styles.less" />
@@ -790,6 +788,58 @@
     <Content Include="NiceAdmin\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="NiceAdmin\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="NiceAdmin\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap.css.map" />
+    <Content Include="bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="bootstrap\js\bootstrap.js.map" />
+    <Content Include="bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="eshop\fonts\fontawesome-webfont.woff" />
+    <Content Include="eshop\fonts\FontAwesome.otf" />
+    <Content Include="eshop\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Scripts\jquery-1.8.3.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.3.js" />
+    <Content Include="Scripts\jquery-1.8.3.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminCategoryController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminIstatisticController.cs" />
+    <Compile Include="Controllers\AdminProductController.cs" />
+    <Compile Include="Controllers\AdminSalesController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roller\AdminRolProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
     <Content Include="Content\bootstrap.rtl.min.css.map" />
     <Content Include="Content\bootstrap.rtl.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />

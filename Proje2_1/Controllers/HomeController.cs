@@ -16,7 +16,7 @@ namespace Proje2_1.Controllers
 
         public ActionResult Index(int sayfa=1)
         {
-            return View(productrepository.List().ToPagedList(sayfa,3));
+            return View(productrepository.List().ToPagedList(sayfa,6));
         }
     }
 }

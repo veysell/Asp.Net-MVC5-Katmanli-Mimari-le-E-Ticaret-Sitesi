@@ -3,6 +3,8 @@ using EntityLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
@@ -43,21 +45,61 @@ namespace Proje2_1.Controllers
         public ActionResult PasswordReset(string eposta)
         {
             var mail = db.Users.Where(x => x.Email == eposta).SingleOrDefault();
-            if (mail!=null)
+            if (mail != null)
             {
                 Random rnd = new Random();
-                int yenisifre = rnd.Next(100000,999999);
+                int yenisifre = rnd.Next(100000, 999999);
                 User sifre = new User();
                 mail.Password = (Convert.ToString(yenisifre));
-                mail.RePassword= (Convert.ToString(yenisifre));
-                db.SaveChanges();
-                WebMail.SmtpServer = "smtp.gmail.com";
-                WebMail.EnableSsl = true;
-                WebMail.UserName = "veyselldurannkurumsal@gmail.com";
-                WebMail.Password = "Veyskurumsal.1";
-                WebMail.SmtpPort = 587;
-                WebMail.Send(eposta, "Giriş Şifreniz", "Şifreniz:" + yenisifre);
-                ViewBag.uyari = "Şifreniz gönderilmiştir.";
+                mail.RePassword = (Convert.ToString(yenisifre));
+                
+                string fromAddress = "veyselldurannkurumsal@gmail.com";
+                string fromAddressPass = "Veyskurumsal.1";
+                try
+                {
+                    MailMessage sendMail = new MailMessage();
+                    sendMail.To.Add(eposta);
+                    sendMail.From = new MailAddress(fromAddress);
+                    sendMail.Subject = "VeysOhm Yeni Şifre";
+                    sendMail.Body = Convert.ToString(yenisifre);
+                    sendMail.IsBodyHtml = true;
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Credentials = new NetworkCredential(fromAddress, fromAddressPass);
+                    smtp.Port = 587;
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.EnableSsl = true;
+                    smtp.Send(sendMail);
+                    ViewBag.uyari = "Şifreniz " + eposta + " adresine gönderilmiştir.";
+                    db.SaveChanges();
+
+                }
+                catch (Exception)
+                {
+
+                    ViewBag.uyari = "Şifreniz gönderilemedi tekrar deneyiniz.";
+                }
+
+
+
+                //    var fromAddress = new MailAddress("veyselldurannkurumsal@gmail.com");
+                //    var toAddress = new MailAddress(eposta);
+                //    const string subject = "VeysOhm | Yeni Şifre";
+                //    using (var smtp = new SmtpClient
+                //    {
+                //        Host = "smtp.gmail.com",
+                //        Port = 587,
+                //        EnableSsl = true,
+                //        DeliveryMethod = SmtpDeliveryMethod.Network,
+                //        UseDefaultCredentials = false,
+                //        Credentials = new NetworkCredential(fromAddress.Address, "Veyskurumsal.1")
+                //    })
+                //    using (var message = new MailMessage(fromAddress, toAddress) { Subject = subject, Body = Convert.ToString(yenisifre) })
+                //    {
+
+                //        smtp.Send(message);
+                //    }
+                //ViewBag.uyari = "Şifreniz " + eposta + " adresine gönderilmiştir.";
+
             }
             else
             {
