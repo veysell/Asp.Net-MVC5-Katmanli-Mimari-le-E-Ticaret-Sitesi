@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,7 +37,13 @@ namespace BusinnesLayer.Abstract
 
         public List<T> List()
         {
+            
             return data.ToList();
+        }
+
+        public List<T> Seach(Expression<Func<T, bool>> str)
+        {
+            return data.Where(str).ToList();
         }
 
         public void Update(T p)

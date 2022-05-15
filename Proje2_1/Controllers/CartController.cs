@@ -22,14 +22,14 @@ namespace Proje2_1.Controllers
                 var kullanici_id = db.Carts.FirstOrDefault(x => x.UserId == kullanici.Id);
                 if (model != null)
                 {
-                    if (kullanici_id == null)
+                    if (kullanici_id == null )
                     {
                         ViewBag.Tutar = "Sepette ürün bulunmamaktadır";
                     }
                     else if (kullanici_id != null)
                     {
-                        Tutar = db.Carts.Where(x => x.UserId == kullanici_id.UserId).Sum(x => x.Product.Price*x.Quantity);
-                        ViewBag.Tutar = "Toplam Tutar" + Tutar + "TL";
+                        Tutar = db.Carts.Where(x => x.UserId == kullanici_id.UserId).Sum(x => x.Product.Price * kullanici_id.Quantity);
+                        ViewBag.Tutar = "Toplam Tutar: " + Tutar + "TL";
                     }
                     return View(model);
                 }
@@ -45,31 +45,46 @@ namespace Proje2_1.Controllers
                 var model = db.Users.FirstOrDefault(x => x.Email == username);
                 var u = db.Products.Find(id);
                 var sepet = db.Carts.FirstOrDefault(x => x.UserId == model.Id && x.ProductId == id);
-                if (model!=null)
+                if (model != null)
                 {
-                    if (sepet!=null)
+                    if (sepet != null && (sepet.Product.Id == u.Id))
                     {
-                        sepet.Quantity++;
-                        sepet.Price = u.Price * sepet.Quantity;
+                        if (u.Stock > sepet.Quantity)
+                        {
+                            sepet.Quantity++;
+                            sepet.Price = u.Price * sepet.Quantity;
+                            db.SaveChanges();
+                            return RedirectToAction("Index", "Cart");
+                        }
+                        else
+                        {
+                            // return RedirectToAction("Index", "Cart");
+                        }
+
+                    }
+                    else
+                    {
+                        var s = new Cart
+                        {
+                            UserId = model.Id,
+                            ProductId = u.Id,
+                            Quantity = 1,
+                            Price = u.Price,
+                            Date = DateTime.Now
+                        };
+
+                        db.Carts.Add(s);
                         db.SaveChanges();
-                        return RedirectToAction("Index","Cart");
+                        return RedirectToAction("Index", "Cart");
                     }
 
-                    var s = new Cart
-                    {
-                        UserId = model.Id,
-                        ProductId = u.Id,
-                        Quantity = 1,
-                        Price = u.Price,
-                        Date = DateTime.Now
-                    };
-
-                    db.Carts.Add(s);
-                    db.SaveChanges();
-                    return RedirectToAction("Index", "Cart");
                 }
             }
-            return RedirectToAction("Login","Account");
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            return RedirectToAction("Index", "Cart");
         }
 
         public ActionResult TotalCount(int? count)
@@ -79,7 +94,7 @@ namespace Proje2_1.Controllers
                 var model = db.Users.FirstOrDefault(x => x.Email == User.Identity.Name);
                 count = db.Carts.Where(x => x.UserId == model.Id).Count();
                 ViewBag.count = count;
-                if (count==0)
+                if (count == 0)
                 {
                     ViewBag.count = "";
                 }
@@ -88,7 +103,7 @@ namespace Proje2_1.Controllers
             return PartialView();
         }
 
-        public void DinamikMiktar(int id,int miktari)
+        public void DinamikMiktar(int id, int miktari)
         {
             var model = db.Carts.Find(id);
             model.Quantity = miktari;
@@ -99,24 +114,34 @@ namespace Proje2_1.Controllers
         public ActionResult azalt(int id)
         {
             var model = db.Carts.Find(id);
-            if (model.Quantity==1)
+            if (model.Quantity == 1)
             {
                 db.Carts.Remove(model);
                 db.SaveChanges();
             }
             model.Quantity--;
+
             model.Price = model.Price * model.Quantity;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public ActionResult Arttir(int id)
+        public ActionResult Arttir(int id, int stok)
         {
             var model = db.Carts.Find(id);
-            model.Quantity++;
-            model.Price = model.Price * model.Quantity;
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            if (model.Quantity < stok)
+            {
+                model.Quantity++;
+                model.Price = model.Price * model.Quantity;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("Index");
+            }
+
+
         }
 
         public ActionResult Delete(int id)
@@ -140,6 +165,6 @@ namespace Proje2_1.Controllers
             }
             return HttpNotFound();
         }
-        
+
     }
 }
